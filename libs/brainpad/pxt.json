@@ -1,0 +1,34 @@
+{
+  "name": "brainpad",
+  "description": "The GHI Electronics Brain Pad library",
+  "files": [
+    "README.md",
+    "device.d.ts",
+    "config.ts",
+    "ns.ts",
+    "images.ts",
+    "images.jres",
+    "servos.ts"
+  ],
+  "dependencies": {
+    "base": "file:../base",
+    "core": "file:../core",
+    "buttons": "file:../buttons",
+    "music": "file:../music",
+    "lightsensor": "file:../lightsensor",
+    "accelerometer": "file:../accelerometer",
+    "screen": "file:../screen",
+    "thermometer": "file:../thermometer",
+    "display": "file:../display",
+    "led": "file:../led"
+  },
+  "palette": [
+    "#000000",
+    "#00ffff"
+  ],
+  "screenSize": {
+    "width": 128,
+    "height": 64
+  },
+  "public": true
+}
