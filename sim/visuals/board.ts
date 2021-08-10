@@ -339,7 +339,8 @@ namespace pxsim.visuals {
 			*/
         }
 
-        private initScreen() {			
+        private initScreen() {	
+			/* GHI changed		
             let requested = false;
             this.screenCanvas.width = this.board.screenState.width
             this.screenCanvas.height = this.board.screenState.height
@@ -354,7 +355,7 @@ namespace pxsim.visuals {
                 const flush = () => {
                     requested = false
                     ctx.putImageData(imgdata, 0, 0)
-                    this.lcd.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", this.screenCanvas.toDataURL());
+                    // GHI changed this.lcd.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", this.screenCanvas.toDataURL());
                 }
 
                 // after we did one-time setup, redefine ourselves to be quicker
@@ -370,6 +371,7 @@ namespace pxsim.visuals {
                 // and finally call the redefined self
                 this.board.screenState.onChange()
             } 
+			*/
 			
 			
         }
@@ -478,7 +480,8 @@ namespace pxsim.visuals {
 			*/
         }
 
-        private updateLed() {			
+        private updateLed() {
+			/* GHI changed			
 			let state = this.board;
             if (!state) return;
 			
@@ -497,6 +500,7 @@ namespace pxsim.visuals {
 					this.led.style.stroke = "#0000ff";
 				}
 			}						
+			*/
 		}
 		private updateRgbLed() {
             /* GHI changed
@@ -832,17 +836,13 @@ namespace pxsim.visuals {
 			
 			this.screenCanvas = document.createElement("canvas");
 			*/
-			
-			this.screenCanvas = document.createElement("canvas");
-			
-			const lcdRect = this.element.getElementById("DISPLAY_SCREEN") as SVGRectElement;
-            this.lcd = <SVGImageElement>svg.child(lcdRect.parentElement, "image", { x : lcdRect.x.baseVal.value, y : lcdRect.y.baseVal.value, width: lcdRect.width.baseVal.value, height: lcdRect.height.baseVal.value })
-			
+						
+						
 			const btnids = ["A", "B"];
 			this.buttons = btnids.map(n => this.element.getElementById("BUTTON_" + n) as SVGElement);
 			this.buttons.forEach(b => svg.addClass(b, "sim-button-outer"));
 			
-			this.led = this.element.getElementById("LED") as SVGCircleElement;
+			
         }
 
         private mkBtn(left: number, top: number, label: string): { outer: SVGElement, inner: SVGElement } {
