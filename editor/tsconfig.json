@@ -7,6 +7,6 @@
         "out": "../built/editor.js",
         "rootDir": ".",
         "newLine": "LF",
-        "sourceMap": false
+        "sourceMap": true
     }
 }
